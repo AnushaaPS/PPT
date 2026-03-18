@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 187 92% 55%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 270 60% 65%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 187 92% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --code-bg: 222 47% 8%;
+    --code-keyword: 330 80% 68%;
+    --code-string: 95 60% 55%;
+    --code-type: 187 92% 55%;
+    --code-number: 30 90% 60%;
+    --code-comment: 215 20% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(187 92% 55%) 0%, hsl(270 60% 65%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 16%) 0%, hsl(222 47% 12%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(240 47% 8%) 100%);
+
+    --shadow-glow: 0 0 40px hsl(187 92% 55% / 0.15);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .code-keyword {
+    color: hsl(var(--code-keyword));
+  }
+  .code-string {
+    color: hsl(var(--code-string));
+  }
+  .code-type {
+    color: hsl(var(--code-type));
+  }
+  .code-number {
+    color: hsl(var(--code-number));
+  }
+  .code-comment {
+    color: hsl(var(--code-comment));
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
